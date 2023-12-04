@@ -7,9 +7,9 @@ import javax.imageio.ImageIO;
 
 
 public class ImageReadWrite {
-    public static int height;
-    public static int width;
-    public static int[][] readImage(String path) {
+    public  int height;
+    public  int width;
+    public  int[][] readImage(String path) {
         BufferedImage img;
         try {
             img = ImageIO.read(new File(path));
@@ -32,7 +32,7 @@ public class ImageReadWrite {
         }
     }
 
-    public static BufferedImage getBufferedImage(int[][] imagePixels, int width, int height) {
+    public  BufferedImage getBufferedImage(int[][] imagePixels, int width, int height) {
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         for (int y = 0; y < height; y++) {
             int s;
@@ -47,7 +47,7 @@ public class ImageReadWrite {
         return image;
     }
 
-    public static void writeImage(int[][] imagePixels, int width, int height, String outPath) {
+    public  void writeImage(int[][] imagePixels, int width, int height, String outPath) {
         BufferedImage image = getBufferedImage(imagePixels, width, height);
         File ImageFile = new File(outPath);
         try {
